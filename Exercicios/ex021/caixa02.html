@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping tags</title>
+    <style>
+        body {
+            background-color: black;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+        }
+        header {
+            background-color: blueviolet;
+            padding: 10px;
+            margin: 10px;
+        }
+        header > nav {
+            border-radius: 8px;
+        }
+        header > h1 {
+            box-shadow: -1px 1px 20px 10px rgb(0, 0, 0);
+            border-radius: 25px;
+            text-align: center;
+        }
+        nav { 
+            background-color: #BDFA30;
+            box-shadow: -1px 1px 20px 10px rgb(15, 14, 14);;
+        }
+        nav > a {
+            text-decoration: none;
+            color: brown;
+            font-weight: bold;
+            margin: 30px;   
+        }
+        main {
+            background-color: #FCFCFC;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 0px 65px;   
+        }
+        article {
+            background-color: rgba(128, 128, 128, 0.225);
+            padding: 5px;
+        }
+        article > aside {
+            background-color: rgba(128, 128, 128, 0.421);
+        }
+        footer {
+            background-color: blueviolet;
+            color: #BDFA30;
+            text-align: center;
+            padding: 1px;
+            margin: 0px;
+        } 
+        div#bola1 {
+            float: right;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            border-radius: 100px;
+            position: relative;
+            background-color: aqua;
+        }
+        div#bola2 {
+           
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            border-radius: 100px;
+            position: relative;
+            background-color: aqua;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu site</h1>
+        <nav>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+        </nav>
+    </header>
+    <main>
+        <section id="assuntos">
+                <p>esporte politica tecnologia</p>
+        </section>
+        <section id="Noticias">
+            <article>
+                <h1>Noticia sobre o Brasil</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, nam reiciendis inventore fuga iure a aspernatur hic quas quasi rerum velit et qui cupiditate vitae animi placeat quisquam eligendi voluptatum.</p>
+                <aside>
+                    <p>Artigo escrito Por lucas </p>
+                </aside>    
+            </article>
+            <article>
+                
+            </article>
+        </section>
+        
+    </main>
+    <footer>
+        <p>Desenvolvido por Lucas Barros</p>
+    </footer>
+    <div id="bola1">
+        
+    </div>
+    <div id="bola2">
+
+    </div>
+</body>
+</html>

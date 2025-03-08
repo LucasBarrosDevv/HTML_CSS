@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+    background-image: url("Ark.full.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+img {
+    width: 100px;
+    height: 100px; 
+    border-radius: 50px;    
+}
+div {
+    display: block;
+    width: 300px;
+    
+}
+header {
+    padding: 30px;
+    background-image: linear-gradient(to right, #2F2F2F, #9B9B9B);
+    
+    
+}
+
+div:hover {
+    transform: scale(1.1);
+    
+     
+}
+
