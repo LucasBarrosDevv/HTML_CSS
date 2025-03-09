@@ -11,13 +11,14 @@
      }
     body {
         background-image: url("imagens/backgrond-game.png");
+        background-color: black;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         height: 100vh;
         margin: 0;
         color: white; 
-        }
+    }
     a {
         text-decoration: none;
         color: white; /* Adiciona uma cor ao link para que apareça */
@@ -26,16 +27,42 @@
     header {
         background-image: linear-gradient(to bottom, #0c3d43, #25daee);
         padding-top: 1px;
-        margin-bottom: 250px;
+        margin-bottom: px;
         height: 40px;
         
     }
     header > h1 {
+       
        display: block;
-       text-align: center;
+       
        font-weight: bold;
+       font-size: 2em;
        margin-top: 0px;
        
+       
+    }
+    div > h2 {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 20px 20px 20px 20px;;
+        display: inline-block;
+        text-align: center;
+        margin:  50px 60px 20px 60px;
+        font-weight: bold;
+        color: #00FF40;
+        background-color: rgba(0, 0, 0, 0.758);
+        border-radius: 10px;
+
+    }
+    div > p {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 20px 20px 20px 20px;;
+        background-color: rgba(0, 0, 0, 0.758);
+        margin:  20px 60px 40px 60px;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: #00FF40;
+        border-radius: 10px;
     }
     main { 
         flex: 1;
@@ -43,19 +70,48 @@
     }
     
     main > nav > div {
-        
         font-size: small;
         text-align: center;
         padding: 15px;
-        background-color: #F2600C;
         border-radius: 50px;
         width: 200px; /* Aumenta a largura */
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 40px auto; /* Centraliza os botões */
-        
-        
+        margin: 40px auto; /* Centraliza os botões */  
+    }
+    .link1 > a {
+        color: #00FF40; 
+        font-size: medium; 
+    }
+    .link2 > a {
+        color: #00FF40; 
+        font-size: medium;
+    }
+    .link3 > a {
+        color: #00FF40; 
+        font-size: medium;
+    }
+    .link4 > a {
+        color: #00FF40; 
+        font-size: medium;
+    }
+    .link1 {
+        background-image: linear-gradient(to right, #EC3B20,#095D7D );
+        box-shadow: -3px 0px 20px 7px #ec2748a2;
+            
+    }
+    .link2 {
+        background-image: linear-gradient(to left, #EC3B20,#095D7D );
+        box-shadow: -3px 0px 20px 7px #ec2748a2
+    }
+    .link3 {
+        background-image: linear-gradient(to right, #EC3B20,#095D7D );
+        box-shadow: -3px 0px 20px 7px #ec2748a2
+    }
+    .link4 {
+        background-image: linear-gradient(to left, #EC3B20,#095D7D );
+        box-shadow: -3px 0px 20px 7px #ec2748a2
     }
     nav div:active {
         transform: scale(0.95); /* Dá um efeito de "apertar" o botão */
@@ -67,10 +123,11 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: black; /* Exemplo de cor */
+        background-color: black;
         color: white;
         text-align: center;
         padding: 5px;
+        z-index: -1; /* Coloca o footer abaixo dos botões */
     }
     
 
@@ -82,11 +139,20 @@
         <h1> Free Fire </h1>
     </header>
     <main>
+        <div>
+            <h2>
+                Tudo o que você precisa sobre <stro>Free Fire</stro> !
+            </h2>
+            <p>
+                Aqui você encontra links rápidos para recarga de diamantes, atualizações do jogo e o canal oficial do <stro>YouTube</stro>.
+            </p>
+        </div>
         <nav>
-            <div><a href="https://hype.games/br/free-fire?srsltid=AfmBOoqMPf1zKFkVjF86iw2-xf5TqK54JybSoYTY7XVGuXXZrruDRDOr" target="_blank"> Melhor Site de Recarga</a></div>
-            <div><a href="https://ff.garena.com/pt/article/1458/" target="_blank"> Sobre Atualizações no Jogo</a></div>
-            <div id="fundo"><a href="https://www.youtube.com/@GarenaFreeFireBrasil" target="_blank"> Canal Oficial do YouTube</a></div>
-        </nav>
+            <div class="link1"><a href="https://hype.games/br/free-fire?srsltid=AfmBOoqMPf1zKFkVjF86iw2-xf5TqK54JybSoYTY7XVGuXXZrruDRDOr" target="_blank"> Recarga</a></div>
+            <div class="link2"><a href="https://ff.garena.com/pt/article/1458/" target="_blank"> Atualizações no Game </a></div>
+            <div class="link3"><a href="https://www.youtube.com/@GarenaFreeFireBrasil" target="_blank"> Canal Oficial do YouTube</a></div>
+            <div class="link4"><a href="https://www.challengermode.com/">Torneios</a></div>
+        </nav> 
     </main>
     <footer>
         <div>
