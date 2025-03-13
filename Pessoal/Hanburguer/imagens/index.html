@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburguer</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            color: white;
+            background-color: black;
+            background-image: url(hanburguer.1200.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 0;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        @media (max-width: 600px) {
+        /* Header */
+        header {
+            background-color: crimson;
+
+            
+        }
+        #icone {
+            margin-bottom: 0;
+        }
+        #icone > img {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            margin: 40px;
+            margin-bottom: 0;
+            padding: 20px;
+            border-radius: 100px;
+            box-shadow: 0px 1px 7px 10px #ff680a;
+            
+        }
+        #titulo {
+            display: block;
+            color: yellow;
+            text-align: center; 
+            font-weight: bold;  
+        }
+        #titulo > h1 {
+            margin: 0;
+            margin-bottom: 50px;
+        }
+        
+        #links {
+            text-align: end;
+            background-color: bisque;
+            border: 3px solid white;
+        }
+        #links > a {           
+            color: black;
+            font-weight: bold;
+            font-size: 25px;
+            margin: 10px;
+            padding: 10px;
+            padding-top: 0;
+            padding-bottom: 0;
+            border: 3px solid black;  
+        }
+        /* Header */
+
+        /* Main */
+        img {
+            height: 200px;
+            width: 200px;
+            border-radius: 20px;
+        }
+        main {
+            margin-top: 30px;
+        }
+        section > div {
+            border-radius: 20px;
+        }
+        main > section > div {
+            margin-top: 30px;
+            height: 200px;
+            width: 200px;
+            border: 1px solid yellow;
+        }
+        main > section > h2 {
+            background-image: linear-gradient(to right, rgb(250, 101, 2), rgba(0, 0, 0, 0.361));
+            display: block;
+            background-color: black;
+            width: 200px;
+            padding: 10px;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        /* Main */
+        footer {
+            background-color: #ff680a;
+            padding: 30px;
+            text-align: end;
+            font-weight: bold;
+        }
+        }
+        @media (min-width: 600px) {
+        header {
+            background-color: crimson;
+        }
+        
+        }
+        #icone {
+            margin-bottom: 0;
+        }
+        #icone > img {
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+            margin: 40px;
+            margin-bottom: 0;
+            padding: 20px;
+            border-radius: 150px;
+            box-shadow: 0px 1px 7px 10px #ff680a;
+            
+        }
+        #titulo {
+            display: block;
+            color: yellow;
+            text-align: center; 
+            font-weight: bold;  
+        }
+        #titulo > h1 {
+            flex: 1;
+            margin: 0;
+            margin-bottom: 50px;
+        }
+        
+        #links {
+            text-align: end;
+            background-color: bisque;
+            border: 3px solid white;
+            height: 50px;
+        }
+        #links > a {    
+            display: inline-block;       
+            color: black;
+            font-weight: bold;
+            font-size: 25px;
+            margin: 10px;
+            padding: 10px;
+            padding-top: 0;
+            padding-bottom: 0;
+            border: 3px solid black;  
+        }
+        /* Header */
+
+        /* Main */
+        img {
+            height: 200px;
+            width: 200px;
+            border-radius: 20px;
+        }
+        main {
+            margin-top: 30px;
+        }
+        section > div {
+            border-radius: 20px;
+        }
+        main > section > div {
+            margin-top: 30px;
+            height: 200px;
+            width: 200px;
+            border: 1px solid yellow;
+        }
+        main > section > h2 {
+            background-image: linear-gradient(to right, rgb(250, 101, 2), rgba(0, 0, 0, 0.361));
+            display: block;
+            background-color: black;
+            width: 200px;
+            padding: 10px;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        /* Main */
+        footer {
+            background-color: #ff680a;
+            padding: 30px;
+            text-align: end;
+            font-weight: bold;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="icone">
+            <img src="icone.png" alt="">
+        </div>
+        <div id="titulo">
+            <h1>Hamburguer</h1>
+        </div>
+        <nav id="links">
+            <a href="">Home</a>
+            <a href="">Cardápio</a>
+        </nav>
+    </header>
+
+    <main>             
+        <section class="container">
+            <h2>Barbecue</h2>
+            <div>
+                <img src="barbecue-bacon.jpg" alt="">
+            </div>
+            <h2>Duplo Smash</h2>
+            <div>
+                <img src="duplo-smash.jpg" alt="">
+            </div>
+            <h2>Frango Crocante</h2>
+            <div>
+                <img src="frango.jpg" alt="">
+            </div>
+            <h2>Picanha</h2>
+            <div>
+                <img src="picanha.jpg" alt="">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contato (00)0-0000-0000</p>
+    </footer>
+</body>
+</html>
