@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+   background-color: burlywood;
+}
+header {  
+    display: flex;
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    padding-top: 0;
+}
+header > h1 {
+    display: block;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+img {
+    width: 200px;
+    margin-left: 40px;
+}
+
+main {
+    
+}
+fieldset {
+   border-radius: 20px;
+   border: 1px solid #704D1F;
+}
+legend {
+    background-color: #704D1F;
+   color: white;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    padding: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: -3px -2px 11px 0px #00000038;
+}
+label {
+    margin-left: 20px;
+}
+input[type="checkbox"]{
+    accent-color: rgb(8, 240, 8);
+    transform: scale(1.9);
+    margin-right: 20px;
+    margin-bottom: 15px;
+    border: 2px solid burlywood;
+}
+
+
+span {
+    font-size: 1.4em;
+}
+
+

@@ -71,28 +71,3 @@ for i in range(len(ordem)):
     print(f"{ordem[i]}° - {bairro[i]} - R${valores[i]}")
 
 print(f'Total: R${acumulador}')
-
-1 contra 2.5km
-2 jardim 2.1km
-3 bacuri 4.5km
-1 contra 2.5km
-2 jardim 2.1km
-3 bacuri 4.5km
-1 contra 2.5km
-2 jardim 2.1km
-3 bacuri 4.5km
-1 contra 2.5km
-2 jardim 2.1km
-3 bacuri 4.5km
-1 contra 2.5km
-2 jardim 2.1km
-3 bacuri 4.5km
-1 contra 2.5km
-2 jardim 2.1km
-3 bacuri 4.5km
-1 contra 2.5km
-2 jardim 2.1km
-3 bacuri 4.5km
-1 contra 2.5km
-2 jardim 2.1km
-3 bacuri 4.5km
