@@ -17,22 +17,24 @@ header > h1 {
     display: block;
     margin-top: 40px;
     margin-left: 40px;
+    font-size: 2.5em;
 }
 img {
     width: 200px;
     margin-left: 40px;
 }
-
 main {
-    
+    margin-bottom: 50px;
 }
 fieldset {
+    margin-top: 5px;
    border-radius: 20px;
    border: 1px solid #704D1F;
+   box-shadow: -2px 3px 7px 0px #00000063;
 }
 legend {
     background-color: #704D1F;
-   color: white;
+    color: white;
     font-size: 1.3em;
     margin-bottom: 10px;
     border-radius: 15px;
@@ -43,7 +45,15 @@ legend {
 }
 label {
     margin-left: 20px;
+    font-size: 1.0em;
 }
+label:has(input:checked) {
+    padding: 5px; 
+    border-radius: 5px;
+    font-size: 1.1em;
+    
+}
+
 input[type="checkbox"]{
     accent-color: rgb(8, 240, 8);
     transform: scale(1.9);
@@ -52,9 +62,19 @@ input[type="checkbox"]{
     border: 2px solid burlywood;
 }
 
-
 span {
     font-size: 1.4em;
 }
+input[type="reset"] {
+   
+    background-color: black;
+    color: white;
+    font-size: 1.4em;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    float: right;
+}
+
 
 
