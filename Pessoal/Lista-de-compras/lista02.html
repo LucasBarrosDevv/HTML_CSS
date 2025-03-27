@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Lista</title>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        .num {
+            background-color: burlywood;
+            border: none;
+        }
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .num-label {
+            position: relative;
+            float: right;
+        }
+        #resultado {
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            background-color: burlywood;
+            top: 0;
+            padding-left: 50%;
+            padding-right: 50%;
+        }    
+        #total {
+            color: rgb(8, 147, 8);
+        }
+        #reais {
+            margin-right: 10px;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lista </h1>
+        <img src="https://static.vecteezy.com/system/resources/previews/019/787/045/non_2x/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" alt="icone">
+    </header>
+    <h2 id="resultado"><span id="reais">R$</span><span id="total">0.00</span></h2>
+    <main>
+        <form action="">
+            <section id="alimentos-basicos-section">
+                <fieldset>
+                    <legend>Alimentos Básicos</legend>
+                    <label for="iarroz">
+                        <input type="checkbox" name="arroz" id="iarroz">
+                        <span>Arroz <label for="in1" class="num-label">R$<input type="number" name="n1" id="in1" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ifeijao">
+                        <input type="checkbox" name="feijao" id="ifeijao">
+                        <span>Feijão <label for="in2" class="num-label">R$<input type="number" name="n2" id="in2" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="imacarrao">
+                        <input type="checkbox" name="macarrao" id="imacarrao">
+                        <span>Macarrão <label for="in3" class="num-label">R$<input type="number" name="n3" id="in3" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ifarinha">
+                        <input type="checkbox" name="farinha" id="ifarinha">
+                        <span>Farinha de Trigo <label for="in4" class="num-label">R$<input type="number" name="n4" id="in4" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ifarinhamandioca">
+                        <input type="checkbox" name="farinha_mandioca" id="ifarinhamandioca">
+                        <span>Farinha de Mandioca <label for="in5" class="num-label">R$<input type="number" name="n5" id="in5" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iacucar">
+                        <input type="checkbox" name="acucar" id="iacucar">
+                        <span>Açúcar <label for="in6" class="num-label">R$<input type="number" name="n6" id="in6" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iasal">
+                        <input type="checkbox" name="sal" id="iasal">
+                        <span>Sal <label for="in7" class="num-label">R$<input type="number" name="n7" id="in7" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iaoleo">
+                        <input type="checkbox" name="oleo" id="iaoleo">
+                        <span>Óleo <label for="in8" class="num-label">R$<input type="number" name="n8" id="in8" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ileite">
+                        <input type="checkbox" name="leite" id="ileite">
+                        <span>Leite em pó <label for="in9" class="num-label">R$<input type="number" name="n9" id="in9" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="icafe">
+                        <input type="checkbox" name="cafe" id="icafe">
+                        <span>Café <label for="in10" class="num-label">R$<input type="number" name="n10" id="in10" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ipao">
+                        <input type="checkbox" name="pao" id="ipao">
+                        <span>Pão <label for="in11" class="num-label">R$<input type="number" name="n11" id="in11" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ialho">
+                        <input type="checkbox" name="alho" id="ialho">
+                        <span>Alho <label for="in12" class="num-label">R$<input type="number" name="n12" id="in12" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ipimenta">
+                        <input type="checkbox" name="pimenta" id="ipimenta">
+                        <span>Pimenta de Cheiro <label for="in13" class="num-label">R$<input type="number" name="n13" id="in13" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="icheiro">
+                        <input type="checkbox" name="cheiro" id="icheiro">
+                        <span>Cheiro Verde <label for="in14" class="num-label">R$<input type="number" name="n14" id="in14" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iquiabo">
+                        <input type="checkbox" name="quiabo" id="iquiabo">
+                        <span>Quiabo <label for="in15" class="num-label">R$<input type="number" name="n15" id="in15" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="imaxixe">
+                        <input type="checkbox" name="maxixe" id="imaxixe">
+                        <span>Maxixe <label for="in16" class="num-label">R$<input type="number" name="n16" id="in16" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="isasazon">
+                        <input type="checkbox" name="sazon" id="isasazon">
+                        <span>Sazón <label for="in17" class="num-label">R$<input type="number" name="n17" id="in17" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iestrato-tomate">
+                        <input type="checkbox" name="estrato-tomate" id="iestrato-tomate">
+                        <span>Estrato de Tomate <label for="in18" class="num-label">R$<input type="number" name="n18" id="in18" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ieketchup">
+                        <input type="checkbox" name="ketchup" id="ieketchup">
+                        <span>Ketchup <label for="in19" class="num-label">R$<input type="number" name="n19" id="in19" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iemaionese">
+                        <input type="checkbox" name="maionese" id="iemaionese">
+                        <span>Maionese <label for="in20" class="num-label">R$<input type="number" name="n20" id="in20" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ifermento">
+                        <input type="checkbox" name="fermento" id="ifermento">
+                        <span>Fermento <label for="in21" class="num-label">R$<input type="number" name="n21" id="in21" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="icuscus">
+                        <input type="checkbox" name="cuscus" id="icuscus">
+                        <span>Cuscuz <label for="in22" class="num-label">R$<input type="number" name="n22" id="in22" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ibolacha">
+                        <input type="checkbox" name="bolacha" id="ibolacha">
+                        <span>Bolacha <label for="in23" class="num-label">R$<input type="number" name="n23" id="in23" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="inescal">
+                        <input type="checkbox" name="nescal" id="inescal">
+                        <span>Nescal <label for="in24" class="num-label">R$<input type="number" name="n24" id="in24" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    
+                </fieldset>    
+            </section> 
+            <section id="proteina-section">
+                <fieldset>
+                    <legend id="proteina">Proteína</legend>
+                    <label for="icarne">
+                        <input type="checkbox" name="carne" id="icarne">
+                        <span>Carne Vermelha <label for="in25" class="num-label">R$<input type="number" name="n25" id="in25" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ifrango">
+                        <input type="checkbox" name="frango" id="ifrango">
+                        <span>Frango <label for="in26" class="num-label">R$<input type="number" name="n26" id="in26" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ipeixe">
+                        <input type="checkbox" name="peixe" id="ipeixe">
+                        <span>Peixe <label for="in27" class="num-label">R$<input type="number" name="n27" id="in27" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iovos">
+                        <input type="checkbox" name="ovos" id="iovos">
+                        <span>Ovos <label for="in28" class="num-label">R$<input type="number" name="n28" id="in28" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ienlatados">
+                        <input type="checkbox" name="enlatados" id="ienlatados">
+                        <span>Enlatados <label for="in29" class="num-label">R$<input type="number" name="n29" id="in29" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    
+            </section>
+            
+            <section id="hortfrut-section">
+                <fieldset>
+                    <legend id="hortfrut">HortFrut</legend>
+                    <label for="ibatata">
+                        <input type="checkbox" name="batata" id="ibatata">
+                        <span>Batata <label for="in30" class="num-label">R$<input type="number" name="n30" id="in30" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="icebola">
+                        <input type="checkbox" name="cebola" id="icebola">
+                        <span>Cebola <label for="in31" class="num-label">R$<input type="number" name="n31" id="in31" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ialho">
+                        <input type="checkbox" name="alho" id="ialho">
+                        <span>Alho <label for="in32" class="num-label">R$<input type="number" name="n32" id="in32" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="itomate">
+                        <input type="checkbox" name="tomate" id="itomate">
+                        <span>Tomate <label for="in33" class="num-label">R$<input type="number" name="n33" id="in33" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="icenoura">
+                        <input type="checkbox" name="cenoura" id="icenoura">
+                        <span>Cenoura <label for="in34" class="num-label">R$<input type="number" name="n34" id="in34" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ibanana">
+                        <input type="checkbox" name="banana" id="ibanana">
+                        <span>Banana <label for="in35" class="num-label">R$<input type="number" name="n35" id="in35" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="imaca">
+                        <input type="checkbox" name="maca" id="imaca">
+                        <span>Maçã <label for="in36" class="num-label">R$<input type="number" name="n36" id="in36" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                             
+                </fieldset>
+            </section>
+            
+            <section id="produtos-de-limpeza-section">
+                <fieldset>
+                    <legend id="produtos-de-limpeza">Produtos de Limpeza</legend>
+                    <label for="idetergente">
+                        <input type="checkbox" name="detergente" id="idetergente">
+                        <span>Detergente <label for="in37" class="num-label">R$<input type="number" name="n37" id="in37" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+            
+                    <label for="isabaoempo">
+                        <input type="checkbox" name="saboempo" id="isabaoempo">
+                        <span>Sabão em Pó <label for="in38" class="num-label">R$<input type="number" name="n38" id="in38" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iaguasanitaria">
+                        <input type="checkbox" name="aguasanitaria" id="iaguasanitaria">
+                        <span>Água Sanitária <label for="in39" class="num-label">R$<input type="number" name="n39" id="in39" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="idesinfetante">
+                        <input type="checkbox" name="desinfetante" id="idesinfetante">
+                        <span>Desinfetante <label for="in40" class="num-label">R$<input type="number" name="n40" id="in40" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="iesponja">
+                        <input type="checkbox" name="esponja" id="iesponja">
+                        <span>Esponja <label for="in41" class="num-label">R$<input type="number" name="n41" id="in41" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                </fieldset>
+            </section>
+            
+            <section id="higiene-pessoal-section">
+                <fieldset>
+                    <legend id="higiene-pessoal">Higiene Pessoal</legend>
+                    <label for="isabonete">
+                        <input type="checkbox" name="sabonete" id="isabonete">
+                        <span>Sabonete <label for="in42" class="num-label">R$<input type="number" name="n42" id="in42" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ishampoo">
+                        <input type="checkbox" name="shampoo" id="ishampoo">
+                        <span>Shampoo <label for="in43" class="num-label">R$<input type="number" name="n43" id="in43" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ipastadente">
+                        <input type="checkbox" name="pastadente" id="ipastadente">
+                        <span>Pasta de Dente <label for="in44" class="num-label">R$<input type="number" name="n44" id="in44" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    <label for="ipapelhigienico">
+                        <input type="checkbox" name="papelhigienico" id="ipapelhigienico">
+                        <span>Papel Higiênico <label for="in45" class="num-label">R$<input type="number" name="n45" id="in45" step="0.10" value="0.00" class="num"></label></span><br>
+                    </label>
+                    
+                    
+                </fieldset>
+            </section>
+        </form> 
+    </main>
+        <footer>
+            <a href="index.html" id="voltar">&gt; Voltar &lt;</a>
+        </footer>
+        <script>
+           function calcularTotal() {
+            let total = 0;
+            document.querySelectorAll('.num').forEach(input => {
+                let valor = parseFloat(input.value) || 0;
+                total += valor;
+            });
+            document.getElementById('total').textContent = total.toFixed(2);
+            }
+
+            // Adiciona evento a todos os inputs de número
+            document.querySelectorAll('.num').forEach(input => {
+                input.addEventListener('input', calcularTotal);
+            });
+            
+        </script>
+</body>
+</html>
