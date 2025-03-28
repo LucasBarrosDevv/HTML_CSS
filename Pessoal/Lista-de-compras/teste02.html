@@ -17,29 +17,26 @@
             <section id="lista-compras-section">
                 <fieldset>
                     <legend>Itens da Lista</legend>
-                    <label for="manteiga">
-                        <input type="checkbox" id="manteiga">
-                        Manteiga
-                        <label class="num-label">
-                            R$<input type="number" class="num" step="0.10" placeholder="0.00" min="0">
-                            <input type="number" class="multiplicador" placeholder="1" min="1">
+                    <div class="item">
+                        <label class="item-label">
+                            <input type="checkbox" class="check">
+                            <span class="nome-item">Manteiga</span>
+                            <label class="num-label">
+                                R$<input type="number" class="num" step="0.10" placeholder="0.00" min="0">
+                                <input type="number" class="multiplicador" placeholder="1" min="1">
+                            </label>
                         </label>
-                    </label><br>
-                    <label for="leitepo">
-                        <input type="checkbox" id="leitepo">
-                        Leite em Pó
-                        <label class="num-label">
-                            R$<input type="number" class="num" step="0.10" placeholder="0.00" min="0">
-                            <input type="number" class="multiplicador" placeholder="1" min="1">
-                        </label>
-                    </label><br>
-                    
+                    </div>
                 </fieldset>
             </section>
         </form> 
+        <section id="section-botao">
+            <button id="duplicar-item">Adicionar</button>
+        </section>
     </main>
+    
     <footer>
-        <a href="index02.html" id="voltar">&gt; Voltar &lt;</a>
+        <a href="index02.html" id="voltar"> &lt;  </a>
     </footer>
     <script>
         function calcularTotal() {
@@ -55,7 +52,33 @@
         document.querySelectorAll('.num, .multiplicador').forEach(input => {
             input.addEventListener('input', calcularTotal);
         });
-        
+
+        function duplicarUltimoItem() {
+            let itens = document.querySelectorAll('.item');
+            if (itens.length === 0) {
+                alert("Nenhum item para duplicar!");
+                return;
+            }
+
+            let ultimoItem = itens[itens.length - 1];
+            let novoNome = prompt("Digite o nome do novo item:");
+            if (!novoNome) {
+                alert("Nome inválido! O item não foi duplicado.");
+                return;
+            }
+
+            let itemClone = ultimoItem.cloneNode(true);
+            itemClone.querySelector('.nome-item').textContent = novoNome;
+            itemClone.querySelectorAll('.num, .multiplicador').forEach(input => {
+                input.value = "";
+                input.addEventListener('input', calcularTotal);
+            });
+
+            document.querySelector("#lista-compras-section fieldset").appendChild(itemClone);
+        }
+
+        document.getElementById('duplicar-item').addEventListener('click', duplicarUltimoItem);
+
         document.getElementById('voltar').addEventListener('click', function(event) {
             event.preventDefault();
             let confirmar = confirm("Tem certeza de que deseja voltar?");

@@ -20,11 +20,13 @@ header > h1 {
     font-size: 2.5em;
 }
 img {
-    width: 200px;
-    margin-left: 40px;
+    height: 150px;
+    margin-left: 0px;
+    margin-top: 20px;
 }
 main {
     margin-bottom: 50px;
+    
 }
 fieldset {
    margin-top: 5px;
@@ -44,16 +46,29 @@ legend {
     box-shadow: -3px -2px 11px 0px #00000038;
 }
 label {
-    margin-left: 20px;
-    font-size: 1.0em;
+    margin-left: 5px;
+    font-size: 1.1em;
+    
 }
 label:has(input:checked) {
     padding: 5px; 
     border-radius: 5px;
-    font-size: 1.1em;
-    
+    margin-left: 5px;
 }
-
+.num-label {
+    position: relative;
+    float: right;
+}
+.num {
+    background-color: burlywood;
+    border: none;
+}
+input.num[type="number"] {
+    width: 50px;
+ }
+ input.multiplicador[type="number"] {
+    width: 30px;
+}
 input[type="checkbox"]{
     accent-color: rgb(8, 240, 8);
     transform: scale(1.9);
@@ -61,33 +76,65 @@ input[type="checkbox"]{
     margin-bottom: 15px;
     border: 2px solid burlywood;
 }
+input[type="number"] {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.multiplicador {
+    background-color: burlywood;
+    font-weight: bold;
+    color: rgb(37, 146, 219);
+}
 
 span {
     font-size: 1.4em;
 }
-input[type="reset"] {
-   
-    background-color: black;
-    color: white;
-    font-size: 1.4em;
+#resultado {
+    text-align: center;
+    position: sticky;
+    background-color: burlywood;
+    top: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}    
+#total {
+    color: rgb(8, 147, 8);
+}
+#reais {
+    margin-right: 10px;
+    font-size: medium;
+}
+.num {
+    color: green;
+    font-weight: bold;
+}
+#section-botao {
+    display: flex;
+    justify-content: end;
     margin: 20px;
-    border-radius: 20px;
+    margin-left: 20%;
+}
+#duplicar-item {
+    background-color: rgb(204, 157, 101);
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2em;
+    border-radius: 10px;
     padding: 10px;
-    float: right;
+    box-shadow: inset 0px 1px 10px 2px rgba(0, 0, 0, 0.405);
 }
 footer {
-    background-color: #704D1F;
-    text-align: center;
+    position: fixed;
+    bottom: 0;
     max-width: 200px;
-    margin: auto;
-    
+    margin-left: 20px;
 }
 #voltar {
     text-decoration: none;
-    color: white;
-    font-size:2.0em;
-    
+    color: black;
+    font-size:3em; 
+    font-weight: bolder;
 }
-
-
-
