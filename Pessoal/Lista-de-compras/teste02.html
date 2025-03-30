@@ -4,18 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Personalizada</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
     <link rel="stylesheet" href="style/style.css">
+
 </head>
 <body>
     <header>
         <h1>Lista de Compras</h1>
         <img src="https://static.vecteezy.com/system/resources/previews/019/787/045/non_2x/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" alt="icone">
     </header>
-    <h2 id="resultado"><span id="reais">R$</span><span id="total">0.00</span></h2>
+    <section id="icone-sidebar">
+        <span id="burguer" class="material-icons md-36">menu</span>
+    </section>
+    <div id="icone-sidebar">
+        
+    </div>
+    <div id="sidebar">
+        <a href="">link</a>
+        <a href="">link</a>
+        <a href="">link</a>
+    </div>
     <main>
         <form action="">
             <section id="lista-compras-section">
-                <fieldset>
+            <fieldset>
                     <legend>Itens da Lista</legend>
                     <div class="item">
                         <label class="item-label">
@@ -30,14 +44,22 @@
                 </fieldset>
             </section>
         </form> 
-        <section id="section-botao">
-            <button id="duplicar-item">Adicionar</button>
+        <section class="aside" id="aside1">
+            <a href="index02.html" id="voltar">
+                <span class="material-symbols-outlined">
+                    arrow_back
+                </span>  
+            </a>
         </section>
+        <section class="aside" id="aside2">
+            <button id="duplicar-item"><span id="burguer" class="material-icons md-36">add</span></button>
+        </section>
+        
     </main>
     
-    <footer>
-        <a href="index02.html" id="voltar"> &lt;  </a>
-    </footer>
+    
+        
+    
     <script>
         function calcularTotal() {
             let total = 0;
