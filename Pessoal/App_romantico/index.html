@@ -58,26 +58,44 @@
     
     #principal {
       
-        position: fixed; /* fica fixo na viewport, independente do body */
-        top: 50%;
+        position: absolute; /* fica fixo na viewport, independente do body */
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10; /* fica na frente da chuva */
         text-align: center; /* opcional, centraliza conteúdo dentro da div */
-
         
-}
+        
+        }
+        audio#meuAudio {
+        width: 100vw; /* aumenta a largura para 300 pixels */
+        max-width: 100%; /* para responsividade */
+        height: 50px; /* opcional, pode ajustar a altura */
+        }
 
   </style>
 </head>
 <body>
     <div id="principal">
         <img src="Minha_prikita.jpg" alt="">
-        <audio id="meuAudio" src="MeuBombom.mp3" autoplay controls></audio>
+        <audio id="meuAudio" src="MeuBombom.mp3" controls></audio>
+
+<script>
+  const audio = document.getElementById("meuAudio");
+
+  // Tenta tocar o áudio automaticamente ao carregar
+  window.addEventListener('load', () => {
+    audio.play().catch(() => {
+      // Se autoplay for bloqueado, espere clique para tocar
+      document.body.addEventListener('click', () => {
+        audio.play();
+      }, { once: true });
+    });
+  });
+</script>
+
 
     </div>
-
-
     <script>
 
   const frases = [
