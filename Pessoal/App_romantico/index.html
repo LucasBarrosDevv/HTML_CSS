@@ -55,22 +55,27 @@
     }
     
     #principal {
-        position: absolute;
+      
+        position: fixed; /* fica fixo na viewport, independente do body */
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
+        z-index: 10; /* fica na frente da chuva */
+        text-align: center; /* opcional, centraliza conteúdo dentro da div */
+
+        
+}
+
+
+    
    
-    img {
-        border-radius: 20px;
-        width: 300px;
-    }
+    
   </style>
 </head>
 <body>
     <div id="principal">
         <img src="Minha_prikita.jpg" alt="">
-        <audio src="MeuBombom.mp3" controls ></audio>
+        <audio src="MeuBombom.mp3" controls autoplay></audio>
     </div>
 
 
