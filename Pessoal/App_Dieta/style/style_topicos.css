@@ -29,6 +29,7 @@ fieldset {
     border: 1px solid #FFED66;
     background-image: linear-gradient(to right, #5EFC8D, #05F04B );
     border-radius: 20px;
+    border-top-left-radius: 0px;
     margin-top: 10px;
     font-weight: bold; 
 }
