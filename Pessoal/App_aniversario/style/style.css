@@ -132,23 +132,21 @@
       max-width: 600px;
       margin: 30px auto 10px auto;
       margin-top: 15px;
+      margin-bottom: 3px;
       overflow: hidden;
       border-radius: 10px;
     }
-
     /* Imagens do carrossel */
     .slides {
       display: none;
       width: 100%;
       border-radius: 10px;
     }
-
     /* Container dos pontos indicadores */
     .dots {
       text-align: center;
       margin-bottom: 0px;
     }
-
     /* Estilo dos pontos */
     .dot {
       cursor: pointer;
@@ -160,12 +158,10 @@
       display: inline-block;
       transition: background-color 0.3s ease;
     }
-
     /* Ponto ativo */
     .active {
       background-color: #c2185b;
     }
-
     /* Área de curtidas */
     #curtida {
       display: flex;
@@ -177,17 +173,147 @@
     /* Ícone de curtida */
     #likeIcon {
       width: 30px;
+      margin-left: 18px;
     }
+    
+    #spotify {
+      background-color: black;
+      padding: 30px;
+      
+    }
+    .audio {
+      margin: 2px;
+    }
+    /* Área principal da animação */
+   /* Espaço para o sistema solar */
 
-    /* Animação de pulsar */
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.4); }
-      100% { transform: scale(1); }
+.espaco {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  background-color: black;
+  
+}
+
+/* Sol central */
+.sol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #FFD700, #fff700);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px #FFD700;
+}
+
+/* Órbita da Terra */
+.orbita-terra {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  border: 1px dashed #aaaaaa6c;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbita-terra 10s linear infinite;
+}
+
+/* Terra */
+.terra {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #2051f2, #1c60e9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #00f;
+}
+
+/* Órbita da Lua */
+.orbita-lua {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbita-lua 2s linear infinite;
+}
+
+/* Lua */
+.lua {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #eee;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px #fff;
+}
+
+/* Animação da órbita da Terra */
+@keyframes orbita-terra {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Animação da órbita da Lua */
+@keyframes orbita-lua {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Animação de pulsar */
+@keyframes pulsar-sol {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 30px #FFD700;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 0 50px #FFD700;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 30px #FFD700;
+  }
+}
+
+/* Aplicar a animação no Sol */
+.sol {
+  animation: pulsar-sol 2s infinite ease-in-out;
+}
+
+   
+
+    /* Ícone da Lua na legenda */
+    .lua-legenda {
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      display: inline-block;
     }
+    
     #temporizador {
         background-color: black;
-        padding-top: 100px;
         padding-bottom: 100px;
     }
     h1 {
@@ -202,7 +328,7 @@
       justify-content: center;
       font-size: 1.4rem;
       text-align: center;
-      border: 1px solid gold;
+      
       border-radius: 50px;
       
     }
