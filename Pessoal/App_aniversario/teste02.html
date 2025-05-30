@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pontinhos Neon</title>
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .neon-loader-dots {
+    display: flex;
+    gap: 12px;
+  }
+
+  .neon-loader-dot {
+    width: 14px;
+    height: 14px;
+    background: #0ff;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: neon-blink 1.5s infinite;
+    box-shadow: 0 0 5px #0ff;
+  }
+
+  .neon-loader-dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .neon-loader-dot:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  .neon-loader-dot:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes neon-blink {
+    0%, 80%, 100% {
+      opacity: 0.2;
+      box-shadow: 0 0 5px #0ff;
+    }
+    40% {
+      opacity: 1;
+      box-shadow:
+        0 0 15px #0ff,
+        0 0 25px #0ff;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="neon-loader-dots">
+  <span class="neon-loader-dot"></span>
+  <span class="neon-loader-dot"></span>
+  <span class="neon-loader-dot"></span>
+</div>
+
+</body>
+</html>
