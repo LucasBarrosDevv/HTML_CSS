@@ -67,9 +67,7 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.169);
 
 /* Imagem principal do bolo */
 #bolo_grande {
-width: 100vw;
-max-height: 400px;
-object-fit: cover;
+width: 300px;
 }
 
 /* Mensagem de parabéns */
@@ -79,7 +77,8 @@ text-align: center;
 padding: 20px;
 border-radius: 30px;
 box-shadow: -1px 0px 20px #00000066;
-margin-top: 20px;
+
+padding-top: 20px;
 }
 
 /* Destaque da frase de parabéns */
@@ -181,29 +180,61 @@ gap: 8px;
 width: 30px;
 margin-left: 18px;
 }
-#comentario {
-  margin-top: 20px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-#comentario p {
-  display: flex;
-  align-items: center; 
-  gap: 10px;
-  
-}
-#perfil-lucas {
-  width: 25px; 
-  height: 25px;
-  border-radius: 50%; 
-}
-#nome-perfil {
-  font-size: small;
+  #comentario {
+      background-color: black;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+    }
 
+    #nome-perfil {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: small;
+    }
+
+    #perfil-lucas {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    #meu-comentario {
+      margin-left: 45px;
+      font-size: 0.95rem;
+      
+    }
+
+    .curtir-btn {
+      background: none;
+      border: none;
+      color: #888;
+      cursor: pointer;
+      font-size: 0.85rem;
+      position: absolute;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.3s ease;
+    }
+
+    .curtir-btn:hover {
+      color: #ff007f;
+    }
+
+  .contador {
+  font-weight: normal;
+  color: #555;
+  font-size: 0.95rem !important;
 }
-#meu-comentario {
-  padding-left: 35px;
-}
+
 
 
 #carrosel-juntos {
@@ -299,7 +330,19 @@ position: relative;
 width: 100vw;
 height: 400px;
 background-color: black;
+margin-top: 100px;
 }
+.audio {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1.5s ease;
+}
+
+.audio.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 /* Sol central */
 .sol {

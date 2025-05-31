@@ -31,13 +31,13 @@
 </header>
 <!-- Título -->
 <section>
-  <h1 id="titulo-principal"> Bem-vinda aos  <br><strong>17 anos!</strong></h1>
+  <h1 id="titulo-principal"> Parabens Meu Amor !!</strong></h1>
 </section>
 
 
   <!-- Imagem do bolo -->
   <div>
-    <img id="bolo_grande" src="imagens/Bolo_grande.png" alt="Bolo de Aniversário">
+    <img id="bolo_grande" src="imagens/17-anos.png" alt="Bolo de Aniversário">
   </div>
 
   <!-- Mensagem de parabéns -->
@@ -81,10 +81,59 @@
         <p id="quant_like">1.943</p>
       </div>
 
-      <div id="comentario">
-        <p id="nome-perfil"><img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt=""> <i>Lucas Barros</i> </p>
-        <p id="meu-comentario">De longe a mais linda que ja entrou na minha vida &#10084;&#65039;&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;</p>
-      </div>
+    <div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
+    <i>Lucas Barros</i>
+  </p>
+  <p id="meu-comentario">De longe a mais linda que já entrou na minha vida &#10084;&#65039;&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;</p>
+  <button class="curtir-btn">curtir <span class="contador">1347</span></button>
+</div>
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
+    <i>Lucas Barros</i>
+  </p>
+  <p id="meu-comentario">Linda é pouco, você é maravilhosa, perfeita e minha! &#129392;&#129392;</p>
+  <button class="curtir-btn">curtir <span class="contador">789</span></button>
+</div>
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
+    <i>Lucas Barros</i>
+  </p>
+  <p id="meu-comentario">Deus caprichou demais quando te fez. &#128120;</p>
+  <button class="curtir-btn">curtir <span class="contador">1105</span></button>
+</div>
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
+    <i>Lucas Barros</i>
+  </p>
+  <p id="meu-comentario">A mulher mais incrível que já conheci, sorte a minha te ter. &#128525;&#128525;&#128525;&#128525;</p>
+  <button class="curtir-btn">curtir️ <span class="contador">426</span></button>
+</div>
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
+    <i>Lucas Barros</i>
+  </p>
+  <p id="meu-comentario">Cada dia mais apaixonado por você, meu amor! &#128293;&#128293;&#128293;</p>
+  <button class="curtir-btn">curtir <span class="contador">1398</span></button>
+</div>
+
+<div id="comentario">
+  <p id="nome-perfil">
+    <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
+    <i>Lucas Barros</i>
+  </p>
+  <p id="meu-comentario">Se beleza fosse crime, você estaria presa pra sempre, meu amor! &#128514;&#128514; &#10084;</p>
+  <button class="curtir-btn">curtir <span class="contador">632</span></button>
+</div>
 
     <section id="carrosel-juntos">
       <p id="p-carrosel-juntos">Se eu pudesse congelar o tempo, seria em todos os momentos em que a gente esteve juntos, porque são nesses instantes que eu me sinto completo, feliz e com a certeza de que encontrei o amor da minha vida. &#127757 </p>
@@ -250,6 +299,17 @@
       likeIcon.style.animation = "";
     }, 300);
   });
+  
+    const botoesCurtir = document.querySelectorAll('.curtir-btn');
+
+    botoesCurtir.forEach(botao => {
+      botao.addEventListener('click', () => {
+        const contador = botao.querySelector('.contador');
+        contador.textContent = parseInt(contador.textContent) + 1;
+      });
+    });
+  
+
   const carrosselLuiza = document.getElementById("carrosselLuiza");
 const totalImagensLuiza = 11;
 const larguraImagemLuiza = 300;
@@ -274,6 +334,22 @@ function voltarLuiza() {
 function atualizarCarrosselLuiza() {
   carrosselLuiza.style.transform = `translateX(-${posicaoLuiza * larguraImagemLuiza}px)`;
 }
+const audios = document.querySelectorAll('.audio');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+audios.forEach(audio => {
+  observer.observe(audio);
+});
+
 
 // Loop automático
 setInterval(avancarLuiza, 3000);
