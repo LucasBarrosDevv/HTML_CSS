@@ -143,7 +143,7 @@
     /* Imagens do carrossel */
     .slides {
       width: 470px;
-      height: 500px;
+      height: 700px;
       object-fit: cover; /* ou 'contain' se quiser que ela toda apareça */
       display: block;
       margin: 0 auto;
@@ -181,23 +181,11 @@
       width: 30px;
       margin-left: 18px;
     }
-
-    #carro-luiza {
-    background-color: #c2185b;
-    text-align: center;
-    padding-top: 40px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    }
-    #car-luiza {
-      margin-bottom: 20px;
-      font-size: 1.5em;
-    }
     .carrosselLuiza-container {
       overflow: hidden;
       width: 900px;
       margin: auto;
-      border: 3px solid #000000;
+      border: 3px solid #fff;
       border-radius: 12px;
     }
 
@@ -234,11 +222,6 @@
     .btnLuiza:hover {
       background: #777;
     }
-.carrosselLuiza.active {
-  cursor: grabbing;
-  cursor: -webkit-grabbing;
-  user-select: none; /* evita seleção de texto durante o drag */
-}
 
     .h3 {
       margin: 30px; 
