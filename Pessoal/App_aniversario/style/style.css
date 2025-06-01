@@ -510,3 +510,18 @@ font-size: 1.2rem;
 margin-top: 5px;
 color: #8b949e;
 }
+footer {
+  display: flex;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 20px;
+}
+footer > img {
+  width: 20px;
+}
+footer > a {
+  text-decoration: none;
+  color: aliceblue;
+}
