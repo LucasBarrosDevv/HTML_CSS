@@ -1,6 +1,14 @@
-# HTML_CSS
- Curso de HTML 5 e CSS 3
+# 👋 Olá, eu sou o Lucas!
 
- Estou aprendendo a criar sites e agora vou gerenciar meus repositorios
+💻 Técnico de redes em formação, programador iniciante e entusiasta de tecnologia.
 
- <a href="https://lucasbarrosdevv.github.io/HTML_CSS/Exercicios/ex001/index.html"> Executar o exercicio 001</a>
+## 🛠️ Tecnologias que estou aprendendo:
+- Python 🐍
+- JavaScript ✨
+- HTML & CSS 🎨
+
+## 📌 Projetos:
+- 📱 Cartão de aniversario virtual: https://lucasbarrosdevv.github.io/HTML_CSS/Pessoal/App_aniversario/
+
+
+
