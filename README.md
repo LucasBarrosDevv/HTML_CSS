@@ -9,6 +9,3 @@
 
 ## 📌 Projetos:
 - 📱 Cartão de aniversario virtual: https://lucasbarrosdevv.github.io/HTML_CSS/Pessoal/App_aniversario/
-
-
-
