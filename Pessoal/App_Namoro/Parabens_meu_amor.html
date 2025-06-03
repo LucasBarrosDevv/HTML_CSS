@@ -190,55 +190,7 @@
   </main>
   
 <script>
-  // Função para criar o efeito de sobreposição com afastamento do header
-function criarEfeitoSobreposicao() {
-  const header = document.querySelector("header")
-  const main = document.getElementById("principal")
 
-  // Define a altura inicial do header
-  const headerHeight = header.offsetHeight
-  main.style.marginTop = headerHeight + "px"
-
-  window.addEventListener("scroll", () => {
-    const scrollPos = window.scrollY
-    const maxScroll = headerHeight * 1.5 // Distância máxima para o efeito completo
-
-    // Calcula o progresso do scroll (0 a 1)
-    const progress = Math.min(scrollPos / maxScroll, 1)
-
-    // Efeito de afastamento - move o header para cima
-    const translateY = -scrollPos * 0.8 // Move mais devagar que o scroll
-
-    // Efeito de desaparecimento - reduz a opacidade
-    const opacity = Math.max(1 - progress * 1.2, 0)
-
-    // Efeito de escala - diminui ligeiramente o header
-    const scale = Math.max(1 - progress * 0.1, 0.9)
-
-    // Efeito de desfoque - adiciona blur conforme some
-    const blur = progress * 3
-
-    // Aplica todas as transformações ao header
-    header.style.transform = `translateY(${translateY}px) scale(${scale})`
-    header.style.opacity = opacity
-    header.style.filter = `blur(${blur}px)`
-
-    // Adiciona classe ao main quando está sobrepondo
-    if (progress > 0.3) {
-      main.classList.add("overlapping")
-    } else {
-      main.classList.remove("overlapping")
-    }
-
-    // Ajusta a intensidade dos corações baseado na sobreposição
-    const coracoes = document.getElementById("efeito-coracoes")
-    if (progress > 0.7) {
-      coracoes.style.opacity = 0.3 // Reduz corações quando main está muito sobreposto
-    } else {
-      coracoes.style.opacity = 1
-    }
-  })
-}
 
 // Função para ajustar responsividade
 function ajustarResponsividade() {
