@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema Solar com Várias Luas</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+    }
+    canvas {
+      display: block;
+      margin: auto;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="sistemaSolar" width="800" height="600"></canvas>
+
+  <script>
+    const canvas = document.getElementById('sistemaSolar');
+    const ctx = canvas.getContext('2d');
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    let angle = 0;
+
+    // Função para gerar número aleatório entre min e max
+    function aleatorio(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    // Planetas: cor, distância do sol, raio, velocidade de rotação
+    const planetas = [
+      { cor: 'blue', distancia: 60, raio: 8, velocidade: 0.02 },
+      { cor: 'red', distancia: 100, raio: 10, velocidade: 0.015 },
+      { cor: 'green', distancia: 150, raio: 12, velocidade: 0.01 },
+      { cor: 'orange', distancia: 200, raio: 14, velocidade: 0.007 }
+    ];
+
+    // Adiciona luas aleatórias pra cada planeta
+    planetas.forEach(planeta => {
+      planeta.luas = [];
+      const numLuas = Math.floor(aleatorio(1, 5)); // entre 1 e 4 luas
+
+      for (let i = 0; i < numLuas; i++) {
+        planeta.luas.push({
+          distancia: planeta.raio + aleatorio(10, 30),
+          raio: aleatorio(2, 4),
+          velocidade: aleatorio(0.03, 0.07),
+          cor: 'gray',
+          anguloInicial: aleatorio(0, Math.PI * 2) // posição inicial diferente
+        });
+      }
+    });
+
+    function desenhar() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Desenhar o Sol
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, 30, 0, Math.PI * 2);
+      ctx.fillStyle = 'yellow';
+      ctx.fill();
+      ctx.closePath();
+
+      // Desenhar planetas e suas luas
+      planetas.forEach(planeta => {
+        // Posição do planeta
+        let planetaX = centerX + Math.cos(angle * planeta.velocidade) * planeta.distancia;
+        let planetaY = centerY + Math.sin(angle * planeta.velocidade) * planeta.distancia;
+
+        // Órbita do planeta
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, planeta.distancia, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+        ctx.stroke();
+        ctx.closePath();
+
+        // Planeta
+        ctx.beginPath();
+        ctx.arc(planetaX, planetaY, planeta.raio, 0, Math.PI * 2);
+        ctx.fillStyle = planeta.cor;
+        ctx.fill();
+        ctx.closePath();
+
+        // Desenhar luas
+        planeta.luas.forEach((lua, i) => {
+          // Órbita da lua
+          ctx.beginPath();
+          ctx.arc(planetaX, planetaY, lua.distancia, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+          ctx.stroke();
+          ctx.closePath();
+
+          // Posição da lua
+          let luaX = planetaX + Math.cos(angle * lua.velocidade + lua.anguloInicial) * lua.distancia;
+          let luaY = planetaY + Math.sin(angle * lua.velocidade + lua.anguloInicial) * lua.distancia;
+
+          // Lua
+          ctx.beginPath();
+          ctx.arc(luaX, luaY, lua.raio, 0, Math.PI * 2);
+          ctx.fillStyle = lua.cor;
+          ctx.fill();
+          ctx.closePath();
+        });
+      });
+
+      angle += 1;
+
+      requestAnimationFrame(desenhar);
+    }
+
+    desenhar();
+  </script>
+</body>
+</html>

@@ -9,14 +9,18 @@ box-sizing: border-box;
 margin: 0;
 padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
+/* Garante que o body ocupe toda a altura e não tenha margem */
 body {
-font-family: Arial, sans-serif;
-background-color: black;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 /* Reset básico *//* Reset básico */
-
-
 
 
 /* header *//* header *//* header *//* header *//* header *//* header *//* header *//* header */
@@ -26,7 +30,17 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 100px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Valor menor que o main para permitir sobreposição */
+  background-color: white; /* Ou a cor de fundo que você preferir */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar o header */
+
   
+
   
 }
 /* chuva de corações  chuva de corações chuva de corações chuva de corações*/
@@ -39,6 +53,16 @@ header {
   height: 100%;
   pointer-events: none;
   z-index: 10;
+
+  /* Efeito de corações deve ficar por cima de tudo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permite clicar através dos corações */
+  z-index: 30; /* Valor maior que todos para garantir que fique por cima */
+
 }
 
 .item-coracao {
@@ -186,6 +210,15 @@ main {
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
   box-shadow: 0px -1px 20px 13px #00000094;
+
+  /* Configura o main para sobrepor o header ao rolar */
+  position: relative;
+  z-index: 20; /* Valor maior que o header para garantir que fique por cima */
+  margin-top: 100vh; /* Inicialmente posicionado abaixo do header em altura total da viewport */
+  background-color: white; /* Ou a cor de fundo que você preferir */
+  border-top-left-radius: 20px; /* Cantos arredondados para um efeito visual melhor */
+  border-top-right-radius: 20px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar a sobreposição */
 }
 
 #insta {

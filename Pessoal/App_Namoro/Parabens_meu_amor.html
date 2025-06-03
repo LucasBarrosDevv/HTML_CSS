@@ -17,16 +17,9 @@
 
 <p id="ano">Junho / 2025</p>
 
-  <!-- Linhas de dias do calendário -->
+<!-- Linhas de dias do calendário -->
   
-<div id="container">
-  <p class="itens">05</p>
-  <p class="itens">06</p>
-  <p class="itens">07</p>
-  <p class="itens">08</p>
-  <p class="itens">09</p>
-  <p class="itens">10</p>
-</div>
+
 <div id="container">
   <p class="itens">11</p>
   <p id="data" class="itens">12</p>
@@ -35,8 +28,6 @@
   <p class="itens">15</p>
   <p class="itens">16</p>
 </div>
-
-
 
      <!-- Título -->
   <h1 id="titulo-principal" >Te Amooo!!</h1>
@@ -93,11 +84,11 @@
           <p id="quant_like">1.943</p>
         </div>
   
-      <div id="comentario">
+  <div id="comentario">
     <p id="nome-perfil">
       <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
       <i>Lucas Barros</i>
-    </p>
+  </p>
     <p id="meu-comentario">De longe a mais linda que já entrou na minha vida &#10084;&#65039;&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;</p>
     <button class="curtir-btn">curtir <span class="contador">1347</span></button>
   </div>
@@ -106,7 +97,7 @@
     <p id="nome-perfil">
       <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
       <i>Lucas Barros</i>
-    </p>
+  </p>
     <p id="meu-comentario">Linda é pouco, você é maravilhosa, perfeita e minha! &#129392;&#129392;</p>
     <button class="curtir-btn">curtir <span class="contador">789</span></button>
   </div>
@@ -118,33 +109,6 @@
     </p>
     <p id="meu-comentario">Deus caprichou demais quando te fez. &#128120;</p>
     <button class="curtir-btn">curtir <span class="contador">1105</span></button>
-  </div>
-  
-  <div id="comentario">
-    <p id="nome-perfil">
-      <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
-      <i>Lucas Barros</i>
-    </p>
-    <p id="meu-comentario">A mulher mais incrível que já conheci, sorte a minha te ter. &#128525;&#128525;&#128525;&#128525;</p>
-    <button class="curtir-btn">curtir️ <span class="contador">426</span></button>
-  </div>
-  
-  <div id="comentario">
-    <p id="nome-perfil">
-      <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
-      <i>Lucas Barros</i>
-    </p>
-    <p id="meu-comentario">Cada dia mais apaixonado por você, meu amor! &#128293;&#128293;&#128293;</p>
-    <button class="curtir-btn">curtir <span class="contador">1398</span></button>
-  </div>
-  
-  <div id="comentario">
-    <p id="nome-perfil">
-      <img id="perfil-lucas" src="imagem_Luiza/perfil-Lucas.jpg" alt="">
-      <i>Lucas Barros</i>
-    </p>
-    <p id="meu-comentario">Se beleza fosse crime, você estaria presa pra sempre, meu amor! &#128514;&#128514; &#10084;</p>
-    <button class="curtir-btn">curtir <span class="contador">632</span></button>
   </div>
   
   <hr style="margin-top: 80px;">
@@ -226,6 +190,120 @@
   </main>
   
 <script>
+  // Função para criar o efeito de sobreposição com afastamento do header
+function criarEfeitoSobreposicao() {
+  const header = document.querySelector("header")
+  const main = document.getElementById("principal")
+
+  // Define a altura inicial do header
+  const headerHeight = header.offsetHeight
+  main.style.marginTop = headerHeight + "px"
+
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY
+    const maxScroll = headerHeight * 1.5 // Distância máxima para o efeito completo
+
+    // Calcula o progresso do scroll (0 a 1)
+    const progress = Math.min(scrollPos / maxScroll, 1)
+
+    // Efeito de afastamento - move o header para cima
+    const translateY = -scrollPos * 0.8 // Move mais devagar que o scroll
+
+    // Efeito de desaparecimento - reduz a opacidade
+    const opacity = Math.max(1 - progress * 1.2, 0)
+
+    // Efeito de escala - diminui ligeiramente o header
+    const scale = Math.max(1 - progress * 0.1, 0.9)
+
+    // Efeito de desfoque - adiciona blur conforme some
+    const blur = progress * 3
+
+    // Aplica todas as transformações ao header
+    header.style.transform = `translateY(${translateY}px) scale(${scale})`
+    header.style.opacity = opacity
+    header.style.filter = `blur(${blur}px)`
+
+    // Adiciona classe ao main quando está sobrepondo
+    if (progress > 0.3) {
+      main.classList.add("overlapping")
+    } else {
+      main.classList.remove("overlapping")
+    }
+
+    // Ajusta a intensidade dos corações baseado na sobreposição
+    const coracoes = document.getElementById("efeito-coracoes")
+    if (progress > 0.7) {
+      coracoes.style.opacity = 0.3 // Reduz corações quando main está muito sobreposto
+    } else {
+      coracoes.style.opacity = 1
+    }
+  })
+}
+
+// Função para ajustar responsividade
+function ajustarResponsividade() {
+  const header = document.querySelector("header")
+  const main = document.getElementById("principal")
+  const headerHeight = header.offsetHeight
+
+  main.style.marginTop = headerHeight + "px"
+}
+
+// Executa quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", () => {
+  criarEfeitoSobreposicao()
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.scrollY > 50 && indicador.parentNode) {
+        indicador.style.opacity = "0"
+        indicador.style.transition = "opacity 0.5s ease-out"
+        setTimeout(() => indicador.remove(), 500)
+      }
+    },
+    { once: true },
+  )
+})
+
+// Recalcula quando a janela é redimensionada
+window.addEventListener("resize", ajustarResponsividade)
+
+
+  // Função para ajustar a altura do header dinamicamente
+function ajustarAlturaHeader() {
+  const header = document.querySelector("header")
+  const headerHeight = header.offsetHeight
+  const main = document.getElementById("principal")
+
+  // Define a margem superior do main para ser igual à altura do header
+  // Isso garante que o conteúdo comece logo abaixo do header
+  main.style.marginTop = headerHeight + "px"
+}
+
+// Executa quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", () => {
+  ajustarAlturaHeader()
+
+  // Adiciona efeito de rolagem para sobreposição suave
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY
+    const header = document.querySelector("header")
+    const main = document.getElementById("principal")
+
+    // Se rolou além da altura do header, aplica efeito de sobreposição
+    if (scrollPos > 50) {
+      main.style.borderTopLeftRadius = "20px"
+      main.style.borderTopRightRadius = "20px"
+    } else {
+      main.style.borderTopLeftRadius = "0"
+      main.style.borderTopRightRadius = "0"
+    }
+  })
+})
+
+// Recalcula quando a janela é redimensionada
+window.addEventListener("resize", ajustarAlturaHeader)
   // confetes confetes confetes confetes confetes confetes confetes confetes confetes confetes confetes 
   function criarItemCoracao() {
   const coracao = document.createElement('div');
