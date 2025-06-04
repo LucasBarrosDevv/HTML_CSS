@@ -4,257 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Amor em Pixels</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    body {
-      background: black;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      height: 100vh;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    .container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .carousel-section {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 24px;
-      text-align: center;
-      scroll-snap-align: start;
-      position: relative;
-      transition: all 0.7s ease-out;
-      will-change: transform;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-
-    .section-content {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      max-width: 400px;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: -0.025em;
-      transition: all 0.7s ease-out;
-    }
-
-    .section-subtitle {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      transition: all 0.7s ease-out 0.1s;
-    }
-
-    /* Seções individuais */
-    .section-header {
-      background: linear-gradient(135deg, #ec4899, #ef4444);
-      color: white;
-      z-index: 5;
-    }
-
-    .section-1 {
-      background: linear-gradient(135deg, #facc15, #f97316);
-      color: #1f2937;
-      z-index: 4;
-    }
-
-    .section-main {
-      background: linear-gradient(135deg, #4ade80, #059669);
-      color: white;
-      z-index: 3;
-    }
-
-    .section-2 {
-      background: linear-gradient(135deg, #3b82f6, #4f46e5);
-      color: white;
-      z-index: 2;
-    }
-
-    .section-footer {
-      background: linear-gradient(135deg, #9333ea, #ec4899);
-      color: white;
-      z-index: 1;
-    }
-
-    /* Overlay para profundidade */
-    .section-overlay {
-      position: absolute;
-      inset: 0;
-      background: black;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-
-    /* Indicador de scroll */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: bounce 2s infinite;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    .scroll-indicator.visible {
-      opacity: 1;
-    }
-
-    .scroll-mouse {
-      width: 24px;
-      height: 40px;
-      border: 2px solid white;
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 8px;
-    }
-
-    .scroll-wheel {
-      width: 4px;
-      height: 12px;
-      background: white;
-      border-radius: 2px;
-      margin-top: 8px;
-      animation: pulse 2s infinite;
-    }
-
-    .scroll-text {
-      font-size: 0.875rem;
-      opacity: 0.7;
-    }
-
-    /* Indicador de progresso */
-    .progress-indicator {
-      position: fixed;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 50;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .progress-dot {
-      width: 8px;
-      height: 32px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .progress-dot.active {
-      background: white;
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
-    }
-
-    /* Partículas flutuantes */
-    .particles {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .particle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.2;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    /* Animações */
-    @keyframes bounce {
-      0%, 20%, 53%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-      }
-      40%, 43% {
-        transform: translateX(-50%) translateY(-10px);
-      }
-      70% {
-        transform: translateX(-50%) translateY(-5px);
-      }
-      90% {
-        transform: translateX(-50%) translateY(-2px);
-      }
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.3;
-      }
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-20px) rotate(180deg);
-      }
-    }
-
-    /* Responsividade */
-    @media (min-width: 768px) {
-      .section-title {
-        font-size: 3.75rem;
-      }
-      .section-subtitle {
-        font-size: 1.25rem;
-      }
-    }
-
-    /* Redução de movimento */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style/style.css">
+ 
 </head>
 <body>
   <div class="container" id="container">
@@ -262,13 +13,16 @@
     <section class="carousel-section section-header" data-section="0">
       <div class="section-overlay"></div>
       <div class="section-content">
-        <h1 class="section-title">Amor em Pixels</h1>
-        <p class="section-subtitle">Uma jornada digital do coração</p>
+
+        <h1 class="section-title">
+          Amor em Pixels
+        </h1>
+
+        <p class="section-subtitle">
+          Uma jornada digital do coração
+        </p>
       </div>
       <div class="scroll-indicator visible">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
         <p class="scroll-text">Deslize para cima</p>
       </div>
       <div class="particles"></div>
@@ -278,8 +32,15 @@
     <section class="carousel-section section-1" data-section="1">
       <div class="section-overlay"></div>
       <div class="section-content">
-        <h1 class="section-title">Conexão</h1>
-        <p class="section-subtitle">Quando dois corações se encontram no mundo digital</p>
+
+        <h1 class="section-title">
+          Conexão
+        </h1>
+
+        <p class="section-subtitle"
+        >Quando dois corações se encontram no mundo digital
+      </p>
+
       </div>
       <div class="particles"></div>
     </section>
@@ -288,8 +49,15 @@
     <section class="carousel-section section-main" data-section="2">
       <div class="section-overlay"></div>
       <div class="section-content">
-        <h1 class="section-title">Paixão</h1>
-        <p class="section-subtitle">Cada pixel conta uma história de amor</p>
+
+        <h1 class="section-title">
+          Paixão
+        </h1>
+
+        <p class="section-subtitle">
+          Cada pixel conta uma história de amor
+        </p>
+
       </div>
       <div class="particles"></div>
     </section>
@@ -298,8 +66,15 @@
     <section class="carousel-section section-2" data-section="3">
       <div class="section-overlay"></div>
       <div class="section-content">
-        <h1 class="section-title">Eternidade</h1>
-        <p class="section-subtitle">Momentos que ficam gravados para sempre</p>
+
+        <h1 class="section-title">
+          Eternidade
+        </h1>
+
+        <p class="section-subtitle">
+          Momentos que ficam gravados para sempre
+        </p>
+
       </div>
       <div class="particles"></div>
     </section>
@@ -308,12 +83,22 @@
     <section class="carousel-section section-footer" data-section="4">
       <div class="section-overlay"></div>
       <div class="section-content">
-        <h1 class="section-title">Infinito</h1>
-        <p class="section-subtitle">O amor não tem fim, apenas novos começos</p>
+
+        <h1 class="section-title">
+          Infinito
+        </h1>
+
+        <p class="section-subtitle">
+          O amor não tem fim, apenas novos começos
+        </p>
+
       </div>
       <div class="particles"></div>
     </section>
   </div>
+
+  
+
 
   <!-- Indicador de progresso -->
   <div class="progress-indicator">
@@ -324,129 +109,8 @@
     <div class="progress-dot" data-dot="4"></div>
   </div>
 
-  <script>
-    class AmorEmPixels {
-      constructor() {
-        this.activeSection = 0;
-        this.sections = document.querySelectorAll('.carousel-section');
-        this.progressDots = document.querySelectorAll('.progress-dot');
-        this.scrollIndicator = document.querySelector('.scroll-indicator');
-        
-        this.init();
-      }
-
-      init() {
-        this.createParticles();
-        this.setupIntersectionObserver();
-        this.setupScrollIndicator();
-      }
-
-      createParticles() {
-        this.sections.forEach(section => {
-          const particles = section.querySelector('.particles');
-          for (let i = 0; i < 6; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 2 + 's';
-            particle.style.animationDuration = (3 + Math.random() * 4) + 's';
-            particles.appendChild(particle);
-          }
-        });
-      }
-
-      setupIntersectionObserver() {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const sectionIndex = parseInt(entry.target.dataset.section);
-                this.updateActiveSection(sectionIndex);
-              }
-            });
-          },
-          {
-            threshold: 0.5,
-            rootMargin: '0px'
-          }
-        );
-
-        this.sections.forEach(section => {
-          observer.observe(section);
-        });
-      }
-
-      setupScrollIndicator() {
-        // Esconder indicador após primeiro scroll
-        let hasScrolled = false;
-        document.getElementById('container').addEventListener('scroll', () => {
-          if (!hasScrolled) {
-            this.scrollIndicator.classList.remove('visible');
-            hasScrolled = true;
-          }
-        });
-      }
-
-      updateActiveSection(newIndex) {
-        if (this.activeSection === newIndex) return;
-
-        const oldIndex = this.activeSection;
-        this.activeSection = newIndex;
-
-        // Atualizar indicadores de progresso
-        this.progressDots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === newIndex);
-        });
-
-        // Aplicar transformações e efeitos
-        this.sections.forEach((section, index) => {
-          const offset = Math.max(0, (index - newIndex) * 10);
-          const overlay = section.querySelector('.section-overlay');
-          const title = section.querySelector('.section-title');
-          const subtitle = section.querySelector('.section-subtitle');
-
-          // Transformação da seção
-          section.style.transform = `translateY(${offset}px)`;
-          section.style.boxShadow = index > newIndex ? 
-            '0 -10px 30px rgba(0,0,0,0.3)' : 'none';
-
-          // Overlay para profundidade
-          if (overlay) {
-            overlay.style.opacity = index > newIndex ? '0.1' : '0';
-          }
-
-          // Animações do texto
-          if (title) {
-            title.style.transform = `translateY(${(index - newIndex) * 20}px)`;
-            title.style.opacity = index === newIndex ? '1' : '0.7';
-          }
-
-          if (subtitle) {
-            subtitle.style.transform = `translateY(${(index - newIndex) * 30}px)`;
-            subtitle.style.opacity = index === newIndex ? '1' : '0.5';
-          }
-        });
-      }
-    }
-
-    // Inicializar quando o DOM estiver carregado
-    document.addEventListener('DOMContentLoaded', () => {
-      new AmorEmPixels();
-    });
-
-    // Prevenir zoom em dispositivos móveis
-    document.addEventListener('gesturestart', function (e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('gesturechange', function (e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener('gestureend', function (e) {
-      e.preventDefault();
-    });
-  </script>
+  <script src="script/script.js"></script>
+    
+  
 </body>
 </html>
