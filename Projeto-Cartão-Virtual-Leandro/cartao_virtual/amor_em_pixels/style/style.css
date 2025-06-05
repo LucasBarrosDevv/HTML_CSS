@@ -106,7 +106,7 @@ body {
 
 /* Estilo da imagem do bolo */
 #bolo_grande {
-  width: 250px;
+  width: 100px;
 }
 
 /* Container da mensagem de parabéns */
@@ -407,7 +407,7 @@ body {
 /* Seção da animação do sistema solar */
 .espaco {
   position: relative;
-  width: 98vw;
+  width: 100vw;
   height: 400px;
   background-color: black;
   margin-top: 100px;

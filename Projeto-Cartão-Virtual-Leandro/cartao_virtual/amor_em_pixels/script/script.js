@@ -175,12 +175,15 @@ function atualizarContagem() {
   const segundos = Math.floor((tempoPassado / 1000) % 60);
   const minutos = Math.floor((tempoPassado / 1000 / 60) % 60);
   const horas = Math.floor((tempoPassado / (1000 * 60 * 60)) % 24);
-  const dias = Math.floor(tempoPassado / (1000 * 60 * 60 * 24));
+  const diasTotal = Math.floor(tempoPassado / (1000 * 60 * 60 * 24));
 
+  const meses = Math.floor(diasTotal / 30); // Aproximando cada mês como 30 dias
+  const dias = diasTotal % 30; // Dias restantes além dos meses
+
+  document.getElementById('meses').innerHTML = meses + "<span>Meses</span>";
   document.getElementById('dias').innerHTML = dias + "<span>Dias</span>";
   document.getElementById('horas').innerHTML = horas + "<span>Horas</span>";
   document.getElementById('minutos').innerHTML = minutos + "<span>Minutos</span>";
-  document.getElementById('segundos').innerHTML = segundos + "<span>Segundos</span>";
 }
 
 // Atualiza a contagem a cada segundo
