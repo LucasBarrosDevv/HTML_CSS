@@ -79,6 +79,10 @@
       color: white;
       z-index: 5;
     }
+    #ft-1 {
+      border-radius: 10px;
+      width: 200px;
+    }
 
     .section-1 {
       background: linear-gradient(135deg, #facc15, #f97316);
@@ -103,6 +107,9 @@
       color: white;
       z-index: 1;
     }
+    .section-fogo {
+      z-index: 1;
+    } 
 
     /* Overlay para profundidade */
     .section-overlay {
