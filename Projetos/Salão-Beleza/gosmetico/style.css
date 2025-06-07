@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+:root {
+    --cor-01: #380038;
+    --cor-02: #4A4238;
+    --cor-03:  #04e6f2;
+    --cor-04:  #FAE1DF;
+    --cor-05:  #D30C7B;
+}
+
+
+@media (max-width: 600px) {
+    
+
+
+    body {
+        background-image: linear-gradient(to right, black, var(--cor-01));
+        background-image: url(wallpaper-02-mobile.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        margin: 0;
+
+
+    }
+    img {
+        display: flex;
+        right: 0;
+        width: 150px;
+        border-radius: 100px;
+        margin-top: 50px;
+
+    }
+    
+    header {
+        height: 200px;
+        background-color: purple;
+        
+        text-align: center;
+        
+       
+    }
+    #titulo-principal {
+        border: 1px;
+        margin: 0;
+        padding-top: 30px;
+        max-width: 100%;
+          
+    }
+    #titulo-principal > h1 {
+        position: absolute;
+        max-width: 100%;
+        background-image: linear-gradient(to right, black, magenta);
+        color: white;
+        border: 2px solid black;
+        margin-left: 90px; 
+        margin-right: 90px;
+        padding: 10px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        box-shadow: 1px 1px 11px 6px #04e6f2
+        
+    }
+    #navegação {
+        
+        display: flex;
+        position: absolute;
+        right: 0;
+        margin: 0;
+        margin-top: 147px;
+        font-size: 1.1em;
+        max-width: 100%;
+        padding-left: 100%;
+        padding-bottom: 0;
+    }
+    #navegação > a {
+        max-width: 100%;
+        background-color: antiquewhite;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-right: 20px;
+        padding: 2px;
+        padding-bottom: 0;
+        border-radius: 0px;
+        border-radius: 10px;
+        
+    }
+    
+    .desecrição {
+        display: inline-block;
+        background-image: linear-gradient(to right, var(--cor-02), black);
+        padding-right: 20px;
+        margin: 0;
+        margin-top: 20px;
+        
+    }
+    .container > p {
+        font-weight: bold;
+        margin: 0;
+        padding: 20px;
+        color: black;
+        background-color: var(--cor-04);
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 5px;
+    }
+
+
+}
